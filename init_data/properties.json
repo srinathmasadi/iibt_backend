@@ -1,0 +1,137 @@
+[
+    {
+        "name": "Hyderabad One",
+        "address": "Nanakaramuda",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "Gowra Ventures",
+        "address": "Madhapur",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "Hyderabad One",
+        "address": "Nanakaramuda",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "Assetmonk",
+        "address": "jubilee hills",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "kokapet terminal",
+        "address": "kokapet",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "Sas infra",
+        "address": "Hitech city",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "JAIN CONSTRUCTIONS",
+        "address": "Banjara hills",
+        ",image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "NCC INFRA",
+        "address": "Madhapur",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "JAIN SADGURU'S CAPITAL PARK",
+        "address": "Madhapur",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "Kapil properties",
+        "address": "Shamshabad",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "Shantasriram constructions",
+        "address": "Banjara hills",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "THE HARVEST",
+        "address": "Kokapet",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "PVR DEVELOPERS",
+        "address": "Financial District",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+      },
+      {
+        "name": "VASAVI EDEN SQUARE",
+        "address": "Sangeeth Circle",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+    },
+    {
+        "name": "MAHAVEER GATEWAY",
+        "address": "Banjara Hills Road.no:-02",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+    },
+    {
+        "name": "ASIAN SUNCITY",
+        "address": "Kondapur, Kothaguda X road",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+    },{
+        "name": "LOTUS SQUARE MALL",
+        "address": "Lb nagar",
+        "image": "property1.cloudinary.com",
+        "location": "Hyderabad",
+        "price": "20,000",
+        "Rent": "9%"
+    }
+]
