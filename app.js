@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var authenticationRouter = require('./routes/authentication');
 var userRouter = require('./routes/user.route');
 var propertyRoute = require('./routes/property.route');
+var uploadPhotoRoute = require('./routes/uploadImage.route')
 
 const MongoDB = require('./services/mongodb.service');
 
@@ -32,6 +33,7 @@ app.use('/', indexRouter);
 app.use('/api', authenticationRouter);
 app.use('/api/user', userRouter);
 app.use('/api/property', propertyRoute);
+app.use('/api/upload', uploadPhotoRoute)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

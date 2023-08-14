@@ -15,7 +15,8 @@ const userRegister = async (user) => {
         let userObject = {
             username: user?.username,
             email: user?.email,
-            password: passwordHash
+            password: passwordHash,
+            isAdmin:false
         }
         let savedUser = await MongoDB.db
             .collection(mongoConfig.collections.USERS)

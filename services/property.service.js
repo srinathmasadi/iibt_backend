@@ -29,4 +29,50 @@ const getAllProperties = async () => {
         }
     }
 };
-module.exports = {getAllProperties}
+
+const uploadProperties = async (property) => {
+    try {
+        if(!property?.name||
+            !property?.address||
+            !property?.image||
+            !property?.location||
+            !property?.price||
+            !property?.rent){
+            return {
+                status: false,
+                message:"Please fill all the details"
+            }
+        }
+        const imageUploadResult = await uploadImage(property.image);
+        let propertyObject = {
+            name:property.name,
+            address:property.address,
+            image:imageUploadResult.data,
+            location:property.location,
+            price:property.price,
+            rent:property.rent
+        }
+        let savedProperty = await MongoDB.db
+            .collection(mongoConfig.collections.PROPERTIES)
+            .insertOne(propertyObject)
+            if(savedProperty?.acknowledged && savedProperty.insertedId){
+                return {
+                    status: true,
+                    message:"Property added successfully"
+                }
+            } else {
+                return {
+                    status: false,
+                    message:"Failed to add the property",
+                    
+                }
+            }
+    } catch (error) {
+        return{
+            status: false,
+            message:error
+        }
+    }
+   
+}
+module.exports = {getAllProperties, uploadProperties}
