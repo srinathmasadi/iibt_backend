@@ -5,7 +5,9 @@ const getAllProperties = async () => {
     try {
         let properties = await MongoDB.db
         .collection(mongoConfig.collections.PROPERTIES)
-        .find().toArray()
+        .find()
+        .sort({ createdAt: -1 })
+        .toArray()
 
         if(properties && properties?.length > 0){
             return {
@@ -43,11 +45,10 @@ const uploadProperties = async (property) => {
                 message:"Please fill all the details"
             }
         }
-        const imageUploadResult = await uploadImage(property.image);
         let propertyObject = {
             name:property.name,
             address:property.address,
-            image:imageUploadResult.data,
+            image:property.image,
             location:property.location,
             price:property.price,
             rent:property.rent
