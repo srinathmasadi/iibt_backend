@@ -5,13 +5,13 @@ const getUserData = async (username) => {
     try {
         let userObject = await MongoDB.db
         .collection(mongoConfig.collections.USERS)
-        .findOne({username})
+        .findOne({username},{ projection: { password: 0 } })
 
         if(userObject){
             return {
                 status: true,
                 message: "User found successfully",
-                data: userObject
+                data:userObject
             }
         } else{
             return{
