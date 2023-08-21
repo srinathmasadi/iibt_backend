@@ -1,5 +1,6 @@
 const MongoDB = require("./mongodb.service")
 const { mongoConfig } = require("../config")
+const { ObjectId } = require('mongodb');
 
 const getAllProperties = async () => {
     try {
@@ -39,7 +40,8 @@ const uploadProperties = async (property) => {
             !property?.image||
             !property?.location||
             !property?.price||
-            !property?.rent){
+            !property?.rent||
+            !property.username){
             return {
                 status: false,
                 message:"Please fill all the details"
@@ -51,7 +53,8 @@ const uploadProperties = async (property) => {
             image:property.image,
             location:property.location,
             price:property.price,
-            rent:property.rent
+            rent:property.rent,
+            username:property.username
         }
         let savedProperty = await MongoDB.db
             .collection(mongoConfig.collections.PROPERTIES)
@@ -76,4 +79,50 @@ const uploadProperties = async (property) => {
     }
    
 }
-module.exports = {getAllProperties, uploadProperties}
+
+const getUserProperties = async (username) => {
+    try {
+        const userProperties = await MongoDB.db
+            .collection(mongoConfig.collections.PROPERTIES)
+            .find({ username })
+            .toArray();
+        
+        return {
+            status: true,
+            properties: userProperties,
+        };
+    } catch (error) {
+        return {
+            status: false,
+            message: error,
+        };
+    }
+};
+
+const updateUserPropertiesById = async (propertyId, newProperties) => {
+    // console.log(propertyId, newProperties)
+    try {
+        // Update user properties in the MongoDB collection based on the _id field
+        const updateResult = await MongoDB.db
+            .collection(mongoConfig.collections.PROPERTIES)
+            .updateOne({ _id: new ObjectId(propertyId) }, { $set: newProperties });
+        
+        if (updateResult.modifiedCount === 1) {
+            return {
+                status: true,
+                message: "Property details updated successfully.",
+            };
+        } else {
+            return {
+                status: false,
+                message: "Property details could not be updated.",
+            };
+        }
+    } catch (error) {
+        return {
+            status: false,
+            message: error.toString(), // Convert the error to a string for response
+        };
+    }
+};
+module.exports = {getAllProperties, uploadProperties, getUserProperties, updateUserPropertiesById}
