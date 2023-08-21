@@ -1,5 +1,5 @@
 var express = require("express");
-const {getAllProperties,uploadProperties} = require('../services/property.service')
+const {getAllProperties,uploadProperties, getUserProperties,updateUserPropertiesById} = require('../services/property.service')
 const {getUserData} = require('../services/user.service')
 var router = express.Router();
 
@@ -30,5 +30,26 @@ router.post("/addData", async(req,res)=>{
         });
     }
 })
+
+router.get("/getUserProperty", async(req, res)=> {
+    //console.log("Data of UserProperty", req?.email)
+    let username = req?.username
+    let response = await getUserProperties(username)
+    res.json(response)
+})
+
+router.put('/update-properties', async (req, res) => {
+    const propertyId = req.query.propertyId;
+    console.log("Property Id", propertyId)
+    const newProperties = req.body; // Assuming the updated properties are sent in the request body
+
+    const updateResult = await updateUserPropertiesById(propertyId, newProperties);
+
+    if (updateResult.status) {
+        res.status(200).json(updateResult);
+    } else {
+        res.status(500).json(updateResult);
+    }
+});
 
 module.exports = router;
